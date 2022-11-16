@@ -126,4 +126,8 @@
   font-size: calc(var(--index) / 1.5);
 }
 
+.content {
+  will-change: trasnform;
+}
+
 /*# sourceMappingURL=style.css.map */
