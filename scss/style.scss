@@ -1,0 +1,148 @@
+@import "foonts";
+
+
+
+:root {
+  --index: calc(1vw + 1vh);
+}
+.body {
+  font-family: "raleway_f", sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: white;
+
+  background: #010101;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+
+  &:after {
+    content: "";
+
+    position: absolute;
+    bottom: calc(var(--index) * -3);
+    background-image: url("../imgs/ground.png");
+    background-size: cover;
+
+    height: calc(var(--index) * 7);
+    width: 100%;
+
+    z-index: 100;
+  }
+}
+
+.layers {
+  height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  overflow: hidden;
+  position: relative;
+
+  &__content {
+    transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+    transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+
+    will-change: trasnform;
+
+    z-index: 1;
+
+    font-weight: 900;
+
+    margin-bottom: calc(var(--index) * 1.5);
+
+    color: #f5edc6;
+    text-shadow: 0 0 14px #f5edc6;
+  }
+
+  &__title {
+    font-weight: inherit;
+
+    font-size: calc(var(--index) * 2.5);
+    letter-spacing: calc(var(--index) / 2.2);
+  }
+
+  &__caption {
+    font-weight: inherit;
+
+    font-size: calc(var(--index) / 1.15);
+    letter-spacing: calc(var(--index) / 3.5);
+  }
+}
+
+.layer {
+  width: 100%;
+  min-height: 100%;
+
+  position: absolute;
+
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+
+  z-index: 2;
+
+  transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+
+  &__top {
+    transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+    z-index: auto;
+  }
+
+  &__middle {
+    transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+  }
+
+  &__bottom {
+    transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+  }
+}
+
+.section {
+  min-height: 100vh;
+
+  background-size: cover;
+  background-position: center;
+
+  &__wrapper {
+    min-height: 100vh;
+    max-width: 500px;
+    padding: 110px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    text-align: center;
+
+    @media (max-width: 760px) {
+      justify-content: center;
+      gap: 15px;
+    }
+  }
+
+  &__title {
+    font-size: calc(var(--index) * 2);
+  }
+
+  &__description {
+    font-size: calc(var(--index) / 1.1);
+  }
+
+  &__copyright {
+    font-size: calc(var(--index) / 1.5);
+  }
+}
