@@ -12,6 +12,10 @@ ScrollSmoother.create({
 });
 
 window.onload = function () {
-   document.querySelector(".preloader").remove();
-   document.body.classList.remove("lock");
+   let preload = document.querySelector(".preloader");
+   preload.style.opacity = "0";
+   setTimeout(() => {
+      document.body.classList.remove("lock");
+      preload.remove();
+   }, 2000);
 }
