@@ -10,3 +10,8 @@ ScrollSmoother.create({
    wrapper: ".wrapper",
    content: ".content",
 });
+
+window.onload = function () {
+   document.querySelector(".preloader").remove();
+   document.body.classList.remove("lock");
+}

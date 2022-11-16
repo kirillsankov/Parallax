@@ -24,10 +24,29 @@
   background: #010101;
 }
 
+.lock {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1440px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.preloader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 10000;
+}
+.preloader__image {
+  position: absolute;
+  width: calc(var(--index) * 12);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .header {
